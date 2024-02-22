@@ -17,6 +17,6 @@ Here I showcase how to work with
 
 I wish I had this opensource example before. Happy to share it with community.
 
-This project is part of [DevNotes bundle I sell on gumroad](https://sgonchar.gumroad.com/l/realitykit-visionos). if you are interesting in building native epxeriences for Apple Vision Pro using RealityKit I highly recommend this, it will save you countless of hours in debugging.
+This project is part of [DevNotes bundle I sell on gumroad](https://sgonchar.gumroad.com/l/realitykit-visionos). if you are interesting in building native epxeriences for Apple Vision Pro using RealityKit I highly recommend this, it will save you countless of hours. I've gathered all my experience, tips and tricks there.
 
 You can see and buy [DevNotes here](https://sgonchar.gumroad.com/l/realitykit-visionos)
