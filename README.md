@@ -11,6 +11,7 @@ Here I showcase how to work with
 * Load & play sounds
 * Process collisions
 * Work with underlying mesh data using MTLBuffers
+* I always enjoy with [Injection](https://github.com/johnno1962/InjectionIII) and on Apple Vision Pro it feels like you are a mage when you change the code and smth changes in front of you while your are wearing the device
 
 I wish I had this opensource example before. Happy to share it with community.
 
