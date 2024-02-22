@@ -1,0 +1,239 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 1.0 (409.60.6)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    reorder nameChildren = ["collect_sound_wav", "vacuum_sound_wav", "coin", "part1", "part2"]
+    def Xform "coin" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (0, 0, 0)
+        }
+    )
+    {
+        quatf xformOp:orient = (1, 0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cylinder "Cylinder" (
+            active = true
+            prepend apiSchemas = ["MaterialBindingAPI"]
+            customData = {
+                float3 rotationEulerHint = (0, 0, 1.5707964)
+            }
+        )
+        {
+            uniform token axis = "Y"
+            double height = 0.2
+            rel material:binding = </Root/coin/Cylinder/DefaultMaterial>
+            double radius = 0.05
+            quatf xformOp:orient = (0.70710677, 0, 0, 0.70710677)
+            float3 xformOp:scale = (1, 0.1, 1)
+            float3 xformOp:translate = (5.075708e-8, 0.111791596, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def Material "DefaultMaterial"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+                prepend token outputs:surface.connect = </Root/coin/Cylinder/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                def Shader "DefaultSurfaceShader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (1, 0.79497, 0.035065286) (
+                        colorSpace = "srgb_displayp3"
+                    )
+                    float inputs:metallic = 1
+                    float inputs:roughness = 0.5
+                    token outputs:surface
+                }
+            }
+        }
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (0.020000005, 0.099999994, 0.1)
+                token shapeType = "Box"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (5.122274e-8, 0.111791596, 0)
+                }
+            }
+        }
+    }
+
+    def Xform "part1" (
+        active = true
+    )
+    {
+        reorder nameChildren = ["offset", "part2_connector"]
+        def Xform "offset" (
+            active = true
+            customData = {
+                float3 rotationEulerHint = (-1.5707964, 0, 0)
+            }
+        )
+        {
+            quatf xformOp:orient = (0.70710677, -0.70710677, 0, 0)
+            float3 xformOp:scale = (1, 13, 1)
+            float3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def Cylinder "Cylinder" (
+                active = true
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                uniform token axis = "Y"
+                double height = 0.1
+                rel material:binding = </Root/part1/offset/Cylinder/DefaultMaterial>
+                double radius = 0.05
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                float3 xformOp:translate = (0, 0.05, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial"
+                {
+                    token outputs:mtlx:surface
+                    token outputs:realitykit:vertex
+                    prepend token outputs:surface.connect = </Root/part1/offset/Cylinder/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.52805966, 0.5816678, 1) (
+                            colorSpace = "srgb_displayp3"
+                        )
+                        float inputs:roughness = 0
+                        token outputs:surface
+                    }
+                }
+
+                def RealityKitComponent "GroundingShadow"
+                {
+                    bool enableIBLShadow = 1
+                    bool enableMeshShadow = 1
+                    uniform token info:id = "RealityKit.GroundingShadow"
+                }
+            }
+        }
+
+        def Xform "part2_connector" (
+            active = true
+        )
+        {
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (0, 0, -1.289576)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (0.1, 0.100000076, 1.3)
+                token shapeType = "Box"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (0, 3.7252903e-8, -0.65)
+                }
+            }
+        }
+    }
+
+    def Xform "part2" (
+        active = true
+    )
+    {
+        def Cube "Cube" (
+            active = true
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Root/part2/Cube/DefaultMaterial>
+            double size = 0.2
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (2, 0.3, 1)
+            float3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def Material "DefaultMaterial"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+                prepend token outputs:surface.connect = </Root/part2/Cube/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                def Shader "DefaultSurfaceShader"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (0, 0.409189, 0.35118932) (
+                        colorSpace = "srgb_displayp3"
+                    )
+                    float inputs:roughness = 0.75
+                    token outputs:surface
+                }
+            }
+
+            def RealityKitComponent "GroundingShadow"
+            {
+                bool enableIBLShadow = 1
+                bool enableMeshShadow = 1
+                uniform token info:id = "RealityKit.GroundingShadow"
+            }
+        }
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (0.4, 0.060000002, 0.2)
+                token shapeType = "Box"
+
+                def RealityKitStruct "pose"
+                {
+                }
+            }
+        }
+    }
+
+    def RealityKitAudioFile "collect_sound_wav"
+    {
+        uniform asset file = @collect_sound.wav@
+        uniform bool shouldLoop = 0
+    }
+
+    def RealityKitAudioFile "vacuum_sound_wav"
+    {
+        uniform asset file = @vacuum_sound.wav@
+        uniform bool shouldLoop = 1
+    }
+}
+

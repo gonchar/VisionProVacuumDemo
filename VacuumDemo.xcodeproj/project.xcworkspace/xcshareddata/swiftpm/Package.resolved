@@ -1,0 +1,59 @@
+{
+  "pins" : [
+    {
+      "identity" : "hotreloading",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/johnno1962/HotReloading",
+      "state" : {
+        "revision" : "20ecbd78e7c43e766cda17deffdd9d4a9d772dec",
+        "version" : "4.12.5"
+      }
+    },
+    {
+      "identity" : "inject",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/krzysztofzablocki/Inject",
+      "state" : {
+        "revision" : "e91205e809f7bd7f6fc3f26fc0b5c1fbfaac20c6",
+        "version" : "1.3.0"
+      }
+    },
+    {
+      "identity" : "remote",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/johnno1962/Remote",
+      "state" : {
+        "revision" : "2a03313297a15f31b354dbf2b40c62ca9630b0a1",
+        "version" : "2.3.5"
+      }
+    },
+    {
+      "identity" : "swiftregex5",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/johnno1962/SwiftRegex5",
+      "state" : {
+        "revision" : "552d07e8b2297f90882424f4118d6bcc3a338eb6",
+        "version" : "6.0.1"
+      }
+    },
+    {
+      "identity" : "swifttrace",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/johnno1962/SwiftTrace",
+      "state" : {
+        "revision" : "bcf567003e881d12c69ec1c40a5b3d7c970dcc86",
+        "version" : "8.4.8"
+      }
+    },
+    {
+      "identity" : "xprobeplugin",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/johnno1962/XprobePlugin",
+      "state" : {
+        "revision" : "b96bfe1b50819ab4faa36b108a23685423185af6",
+        "version" : "2.9.6"
+      }
+    }
+  ],
+  "version" : 2
+}
