@@ -1,8 +1,8 @@
-# VisionProVacuumDemo
+# Vision Pro Vacuum Demo
 
 https://github.com/gonchar/VisionProVacuumDemo/assets/1416917/97ce2fd7-db31-41dd-bf70-1f9bef06f353
 
-[View tweet on Twitter](https://twitter.com/the_gonchar/status/1756441654507008079)
+[View on Twitter](https://twitter.com/the_gonchar/status/1756441654507008079)
 
 Source code for a demo project which showcases how to work with Apple Vision Pro and RealityKit, ARKit APIs.
 
