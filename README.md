@@ -1,5 +1,3 @@
-[![bgnew](https://github.com/gonchar/VisionProVacuumDemo/assets/1416917/84add195-ad9d-4925-a014-5f14b309cdac)](https://sgonchar.gumroad.com/l/realitykit-visionos)
-
 # Vision Pro Vacuum Demo
 
 https://github.com/gonchar/VisionProVacuumDemo/assets/1416917/97ce2fd7-db31-41dd-bf70-1f9bef06f353
@@ -16,7 +14,3 @@ Here I showcase how to work with
 * I always enjoy with [Injection](https://github.com/johnno1962/InjectionIII) and on Apple Vision Pro it feels like you are a mage when you change the code and smth changes in front of you while your are wearing the device
 
 I wish I had this opensource example before. Happy to share it with community.
-
-This project is part of [DevNotes bundle I sell on gumroad](https://sgonchar.gumroad.com/l/realitykit-visionos). if you are interesting in building native epxeriences for Apple Vision Pro using RealityKit I highly recommend this, it will save you countless of hours. I've gathered all my experience, tips and tricks there.
-
-You can see and buy [DevNotes here](https://sgonchar.gumroad.com/l/realitykit-visionos)
