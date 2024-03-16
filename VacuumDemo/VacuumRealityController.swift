@@ -69,11 +69,17 @@ final class VacuumRealityController: ObservableObject {
   private var vacuumSoundController:AudioPlaybackController?
   
   private var isVacuumOn:Bool = false
+    
+  private var setupTask:Task<Void, Error>? = nil
+  private var updateTask:Task<Void, Never>? = nil
   
   init() {
   }
   
   public func cleanup() {
+    setupTask?.cancel()
+    updateTask?.cancel()
+
     cancellabe?.cancel()
     cancellabe = nil
     mainScene = nil
@@ -103,7 +109,7 @@ final class VacuumRealityController: ObservableObject {
     
     _ = content.subscribe(to: CollisionEvents.Began.self, on: nil, self.onCollisionBegan)
     
-    Task {
+    setupTask = Task {
       do {
         try await session.run([worldTracking, handTracking, sceneReconstruction])
       } catch {
@@ -111,7 +117,7 @@ final class VacuumRealityController: ObservableObject {
       }
     }
     
-    Task {
+    updateTask = Task {
       for await update in sceneReconstruction.anchorUpdates {
         let meshAnchor = update.anchor
         
